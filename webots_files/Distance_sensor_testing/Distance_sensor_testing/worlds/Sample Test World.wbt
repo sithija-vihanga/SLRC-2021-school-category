@@ -1,0 +1,141 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.272557691289911 0.9275381916166744 0.25570531478869 4.677447823973024
+  position -2.6947654080642924 1.7021509993518817 0.0461594455543083
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+}
+DEF pillar Solid {
+  translation 0.3 0 -0.3
+  children [
+    DEF pillar_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.3
+        radius 0.01
+      }
+    }
+  ]
+  boundingObject USE pillar_shape
+}
+DEF pillar Solid {
+  translation -0.3 0 -0.4
+  children [
+    DEF pillar_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.3
+        radius 0.01
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE pillar_shape
+}
+DEF pillar Solid {
+  translation 0.25 0 0.25
+  children [
+    DEF pillar_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.3
+        radius 0.01
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE pillar_shape
+}
+Robot {
+  translation 1.1523826617683578e-07 -0.0041203681752960755 1.152159517041199e-07
+  rotation 0.18013139287162433 2.733130318494349e-05 0.9836425573119172 -7.395927867647213e-06
+  children [
+    DEF body Transform {
+      translation 0 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.1 0.1
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -8.833663517668602e-13
+        axis 0 1 0
+        anchor 0 0.1 0
+      }
+      device [
+        RotationalMotor {
+          name "motor"
+        }
+      ]
+      endPoint Solid {
+        translation 1.747953109678515e-23 0.125 -1.5458911155920054e-13
+        children [
+          DistanceSensor {
+            translation 0.05 0.0125 0
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.01 0.01 0.01
+                }
+              }
+            ]
+            lookupTable [
+              0 1000 0
+              1 0 0
+            ]
+          }
+          DEF head Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.1 0.05 0.1
+            }
+          }
+        ]
+        boundingObject USE head
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+    density -1
+    mass 10
+  }
+  controller "controller"
+}

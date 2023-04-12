@@ -1,0 +1,288 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.9999858670015854 -0.0037687614334229766 -0.003749964579231384 4.717374847462572
+  position 0.014796714724010977 6.027148697285297 0.19832226608526943
+}
+Background {
+  skyColor [
+    0.4 0.7 1
+  ]
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.1 -0.5 0.3
+}
+RectangleArena {
+  floorSize 2.5 2.5
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+DEF KNIGHT_RIDER Robot {
+  rotation 0 1 0 3.14
+  children [
+    DEF Receiver Receiver {
+      channel 1
+    }
+    DEF LED_1 LED {
+      translation 0.135 0.1 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            metalness 0
+            emissiveIntensity 20
+          }
+          geometry Capsule {
+            bottom FALSE
+            height 0.008
+            radius 0.01
+          }
+        }
+        Shape {
+          appearance BrushedAluminium {
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.011
+          }
+        }
+      ]
+      name "led_1"
+      color [
+        1 0 0
+        0 1 0
+        0 0 1
+      ]
+    }
+    DEF LED_2 LED {
+      translation 0.045 0.1 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            metalness 0
+            emissiveIntensity 20
+          }
+          geometry Capsule {
+            bottom FALSE
+            height 0.008
+            radius 0.01
+          }
+        }
+        Shape {
+          appearance BrushedAluminium {
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.011
+          }
+        }
+      ]
+      name "led_2"
+      color [
+        1 0 0
+        0 1 0
+        0 0 1
+      ]
+    }
+    DEF LED_3 LED {
+      translation -0.045 0.1 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            metalness 0
+            emissiveIntensity 20
+          }
+          geometry Capsule {
+            bottom FALSE
+            height 0.008
+            radius 0.01
+          }
+        }
+        Shape {
+          appearance BrushedAluminium {
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.011
+          }
+        }
+      ]
+      name "led_3"
+      color [
+        1 0 0
+        0 1 0
+        0 0 1
+      ]
+    }
+    DEF LED_4 LED {
+      translation -0.135 0.1 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            metalness 0
+            emissiveIntensity 20
+          }
+          geometry Capsule {
+            bottom FALSE
+            height 0.008
+            radius 0.01
+          }
+        }
+        Shape {
+          appearance BrushedAluminium {
+          }
+          geometry Cylinder {
+            height 0.004
+            radius 0.011
+          }
+        }
+      ]
+      name "led_4"
+      color [
+        1 0 0
+        0 1 0
+        0 0 1
+      ]
+    }
+    Solid {
+      translation 0 0.049726395339132964 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+          }
+          geometry Box {
+            size 0.3 0.1 0.1
+          }
+        }
+      ]
+      boundingObject Box {
+        size 0.3 0.1 0.1
+      }
+      physics Physics {
+      }
+    }
+    Solid {
+      translation 0.135 0.097 -0.03
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.5 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+  ]
+  controller "tx_rx_robot_controller"
+}
+DEF EMITTER Robot {
+  translation -1.1 0.17 -1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.1 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Capsule {
+        height 0.1
+        radius 0.05
+      }
+    }
+    Emitter {
+      range 100
+      channel 1
+    }
+  ]
+  name "em_1"
+  controller "emitter"
+  controllerArgs [
+    "1_2"
+  ]
+}
+DEF EMITTER Robot {
+  translation 1.1 0.17 -1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.1 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Capsule {
+        height 0.1
+        radius 0.05
+      }
+    }
+    Emitter {
+      range 100
+      channel 1
+    }
+  ]
+  name "em_1(1)"
+  controller "emitter"
+  controllerArgs [
+    "2_2"
+  ]
+}
+DEF EMITTER Robot {
+  translation 1.1 0.17 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.1 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Capsule {
+        height 0.1
+        radius 0.05
+      }
+    }
+    Emitter {
+      range 100
+      channel 1
+    }
+  ]
+  name "em_1(2)"
+  controller "emitter"
+  controllerArgs [
+    "3_1"
+  ]
+}
+DEF EMITTER Robot {
+  translation -1.1 0.17 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.1 0.1
+        roughness 1
+        metalness 0
+      }
+      geometry Capsule {
+        height 0.1
+        radius 0.05
+      }
+    }
+    Emitter {
+      range 100
+      channel 1
+    }
+  ]
+  name "em_1(3)"
+  controller "emitter"
+  controllerArgs [
+    "4_3"
+  ]
+}
