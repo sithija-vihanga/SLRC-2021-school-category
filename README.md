@@ -19,7 +19,19 @@ https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/4a
 ## Distance Sensor as a radar for detecting objects
 
 
+https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/3d05b3e8-98ff-431f-ac64-0f7b10dd861c
+
+
+
 ## Wall Following task
 
+
+https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/e3560d74-c636-4251-97f5-9433f54437df
+
+
 ## Display the color pattern transmitted by the transmitters
+
+
+https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/2432094a-3b79-41c2-8183-fdd4db17d8b8
+
 
