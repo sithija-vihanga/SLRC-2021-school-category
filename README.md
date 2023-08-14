@@ -6,7 +6,20 @@ Here all the task sheets and the webots environments are the tasks prepared for 
 
 Here are several videos of attempting the tasks.
 
+## Completing the final task
+
+https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/f59acc65-535c-45b5-9844-22648d401e94
+
+
+
 ## Black and White Floor color scanning
 
 https://github.com/sithija-vihanga/SLRC-2021-school-category/assets/116638289/4aa832d8-6ea5-40fa-b197-a6c5d7531060
+
+## Distance Sensor as a radar for detecting objects
+
+
+## Wall Following task
+
+## Display the color pattern transmitted by the transmitters
 
